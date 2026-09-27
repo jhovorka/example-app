@@ -95,13 +95,12 @@ web app. Some natural next steps:
    backend and frontend, a database (self-managed or managed Postgres), a
    `Secret` for `SECRET_KEY` / `DATABASE_URL`, and a `ConfigMap` for
    non-secret config.
-3. Add an `Ingress` so the frontend and backend are reachable through one
+3. Add an `HTTPRoute` so the frontend and backend are reachable through one
    host.
 4. Add liveness/readiness probes against `/health`.
-5. Add resource requests/limits, then a `HorizontalPodAutoscaler`.
-6. Set up CI to build and push images automatically on every push.
-7. Add a GitOps deployment tool (e.g. Argo CD or Flux).
-8. Add monitoring (e.g. Prometheus + Grafana) and look at what the metrics
+5. Set up CI to build and push images automatically on every push.
+6. Add a GitOps deployment tool (e.g. Argo CD or Flux).
+7. Add monitoring (e.g. Prometheus + Grafana) and look at what the metrics
    look like under load.
-9. Deliberately break things — kill a pod, use a wrong DB password, delete
+8. Deliberately break things — kill a pod, use a wrong DB password, delete
    the database's storage — and see what actually happens.
